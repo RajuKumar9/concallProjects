@@ -122,6 +122,7 @@ public class UploadFakevideo
 	 j++;
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-student[1]/app-student-login[1]/div[1]/form[1]/div[2]/button[1]/span[1]")).click();
+	 System.out.println("saghdsjhsdjh");
 	 Thread.sleep(10000);
     }
 	}
