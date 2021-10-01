@@ -24,13 +24,12 @@ Robot rb;
 @Test
 public void operation() throws InterruptedException
 {	
-
  ChromeOptions options = new ChromeOptions();
  Map<String, Object> prefs = new HashMap<String, Object>();
  prefs.put("profile.default_content_setting_values.media_stream_mic", 1);
  prefs.put("profile.default_content_setting_values.media_stream_camera", 1);
  prefs.put("profile.default_content_setting_values.geolocation", 1);
- //		https://dev.monetrewards.com/monet-live-newUI/#/student/login?roomid=1632896488690&room=1632896488690
+ //https://dev.monetrewards.com/monet-live-newUI/#/student/login?roomid=1632896488690&room=1632896488690
  prefs.put("profile.default_content_setting_values.notifications", 1);
  options.setExperimentalOption("prefs", prefs);
  System.setProperty("webdriver.chrome.driver","C:\\Users\\ASTR-34\\Desktop\\files\\chromedriver\\chromedriver_win32\\chromedriver.exe");
