@@ -21,13 +21,13 @@ public class UploadFakevideo
 	WebDriver driver;
 	Robot rb;;
 	@Test
-	public void operation() throws InterruptedException
+	public void operation() throws InterruptedException, AWTException
 	{	
 	 ChromeOptions options = new ChromeOptions();
 	 Map<String, Object> prefs = new HashMap<String, Object>();
 	 options.addArguments("--use-fake-ui-for-media-stream");
-	 options.addArguments("--use-fake-device-for-media-stream=C:\\Users\\ASTR-34\\Desktop\\files\\fakevideo\\raju_new_vid.y4m");
-	 options.addArguments("--use-file-for-fake-video-capture=C:\\Users\\ASTR-34\\Desktop\\files\\fakevideo\\raju_new_vid.y4m	https://dev.monetrewards.com/monet-live-newUI/#/student/login?roomid=1633005393764&room=1633005393764");
+	 options.addArguments("--use-fake-device-for-media-stream=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
+	 options.addArguments("--use-file-for-fake-video-capture=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
 	 
 	 prefs.put("profile.default_content_setting_values.media_stream_mic", 1);
 	 prefs.put("profile.default_content_setting_values.media_stream_camera", 1);	
@@ -42,12 +42,9 @@ public class UploadFakevideo
 	 //https://dev.monetrewards.com/monet-live-newUI/#/teacher/call?name=nbcu@monet.com&room=1632394511731&roomid=1632394511731&id=852910
 	 driver.manage().window().maximize();
 	 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-	 try{
+	
 	 rb = new Robot();
-	 }catch (AWTException e1){
-	 // TODO Auto-generated catch block
-	 e1.printStackTrace();
-	 }	
+	
 	 Thread.sleep(5000);
 	 rb.keyPress(KeyEvent.VK_CONTROL);
 	 rb.keyPress(KeyEvent.VK_W);
