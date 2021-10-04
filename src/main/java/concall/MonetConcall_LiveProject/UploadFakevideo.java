@@ -25,26 +25,22 @@ public class UploadFakevideo
 	{	
 	 ChromeOptions options = new ChromeOptions();
 	 Map<String, Object> prefs = new HashMap<String, Object>();
+	 //options.addArguments("--headless");
 	 options.addArguments("--use-fake-ui-for-media-stream");
 	 options.addArguments("--use-fake-device-for-media-stream=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
 	 options.addArguments("--use-file-for-fake-video-capture=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
-	 
 	 prefs.put("profile.default_content_setting_values.media_stream_mic", 1);
 	 prefs.put("profile.default_content_setting_values.media_stream_camera", 1);	
 	 prefs.put("profile.default_content_setting_values.geolocation", 1);
-	 //		https://dev.monetrewards.com/monet-live-newUI/#/student/login?roomid=1632896488690&room=1632896488690
-		 
 	 prefs.put("profile.default_content_setting_values.notifications", 1);
 	 options.setExperimentalOption("prefs", prefs);
 	 System.setProperty("webdriver.chrome.driver","C:\\Users\\ASTR-34\\Desktop\\files\\chromedriver\\chromedriver_win32\\chromedriver.exe");
-	 ChromeDriver driver=new ChromeDriver(options);
+	 //  /usr/bin/chromedriver
+     ChromeDriver driver=new ChromeDriver(options);
 	 driver.get("https://dev.monetrewards.com/monet-live-newUI/#/teacher/dashboard?name=MonetDummy");
-	 //https://dev.monetrewards.com/monet-live-newUI/#/teacher/call?name=nbcu@monet.com&room=1632394511731&roomid=1632394511731&id=852910
 	 driver.manage().window().maximize();
 	 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-	
 	 rb = new Robot();
-	
 	 Thread.sleep(5000);
 	 rb.keyPress(KeyEvent.VK_CONTROL);
 	 rb.keyPress(KeyEvent.VK_W);
@@ -68,23 +64,7 @@ public class UploadFakevideo
 	 Thread.sleep(3000);
 	 /*-------------------Share Own Screen -------------------------------------------------------------*/
 	 driver.findElement(By.xpath("//body/app-root[1]/app-teacher[1]/app-call[1]/div[1]/div[4]/button[4]/span[1]/mat-icon[1]")).click();
-	 /*-------------------Implementaion of Robot class----------------		
-	 * ----------------------------------*/
-	 Thread.sleep(3000);
-	 rb.keyPress(KeyEvent.VK_TAB);
-	 rb.keyRelease(KeyEvent.VK_TAB);
-	 Thread.sleep(1000);
-	 rb.keyPress(KeyEvent.VK_TAB);
-	 rb.keyRelease(KeyEvent.VK_TAB);
-	 Thread.sleep(1000);
-	 rb.keyPress(KeyEvent.VK_TAB);
-	 rb.keyRelease(KeyEvent.VK_TAB);
-	 Thread.sleep(3000);
-	 rb.keyPress(KeyEvent.VK_ENTER);
-	 rb.keyRelease(KeyEvent.VK_ENTER);
 	 Thread.sleep(4000);
-	 /*--------------------click on microphone icon----------------------------------------------------------*/
-	 //driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-teacher[1]/app-call[1]/div[1]/div[4]/button[1]/span[1]/mat-icon[1]")).click();
 	 /*-------------------------------------- Open New Tab-------------------------------------------------  */
 	 for(int i=1; i<=10; i++)
 	 {
@@ -114,7 +94,7 @@ public class UploadFakevideo
 	 Thread.sleep(2000);
 	 rb.keyPress(KeyEvent.VK_ENTER);
 	 rb.keyRelease(KeyEvent.VK_ENTER);
-	 Thread.sleep(5000);
+	 Thread.sleep(300);
 	 driver.findElement(By.xpath("//input[@formcontrolname='name' or @type='text']")).sendKeys("Raju-"+j);
 	 j++;
 	 Thread.sleep(1000);

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="concall.MonetConcall_LiveProject.UploadFakevideo">
+      <class name="concall.MonetConcall_LiveProject.MonetConCallLiveProject">
         <methods>
           <include name="operation"/>
         </methods>
-      </class> <!-- concall.MonetConcall_LiveProject.UploadFakevideo -->
+      </class> <!-- concall.MonetConcall_LiveProject.MonetConCallLiveProject -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
