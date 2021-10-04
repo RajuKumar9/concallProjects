@@ -5,7 +5,6 @@
     <classes>
       <class name="concall.MonetConcall_LiveProject.UploadFakevideo">
         <methods>
-          <include name="closeapp"/>
           <include name="operation"/>
         </methods>
       </class> <!-- concall.MonetConcall_LiveProject.UploadFakevideo -->
