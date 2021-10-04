@@ -14,6 +14,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class MonetConCallLiveProject
@@ -81,7 +82,8 @@ public void operation() throws InterruptedException
  String pwin=driver.getWindowHandle();
  Set<String> chwin=driver.getWindowHandles();
  Iterator<String> s=chwin.iterator();
- int j=1;
+ int j=1;		https://dev.monetrewards.com/monet-live-newUI/#/student/login?roomid=1633326124788&room=1633326124788
+	 
  while(s.hasNext())
  {
  String win=s.next();
@@ -108,7 +110,14 @@ public void operation() throws InterruptedException
  Thread.sleep(1000);
  driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-student[1]/app-student-login[1]/div[1]/form[1]/div[2]/button[1]/span[1]")).click();
  Thread.sleep(10000);  
-  } 
-}  
+  } }  
 }
+@AfterTest
+public void closeapp()
+{
+driver.quit();
+}
+
+
+
 }

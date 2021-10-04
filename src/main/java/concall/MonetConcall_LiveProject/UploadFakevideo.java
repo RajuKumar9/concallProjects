@@ -14,6 +14,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class UploadFakevideo 
@@ -34,7 +35,7 @@ public class UploadFakevideo
 	 prefs.put("profile.default_content_setting_values.geolocation", 1);
 	 prefs.put("profile.default_content_setting_values.notifications", 1);
 	 options.setExperimentalOption("prefs", prefs);
-	 System.setProperty("webdriver.chrome.driver","C:\\Users\\ASTR-34\\Desktop\\files\\chromedriver\\chromedriver_win32\\chromedriver.exe");
+	 System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 	 //  /usr/bin/chromedriver
      ChromeDriver driver=new ChromeDriver(options);
 	 driver.get("https://dev.monetrewards.com/monet-live-newUI/#/teacher/dashboard?name=MonetDummy");
@@ -99,9 +100,7 @@ public class UploadFakevideo
 	 j++;
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-student[1]/app-student-login[1]/div[1]/form[1]/div[2]/button[1]/span[1]")).click();
-	 System.out.println("saghdsjhsdjh");
 	 Thread.sleep(10000);
-    }
-	}
+    }}
 	}
 	}
