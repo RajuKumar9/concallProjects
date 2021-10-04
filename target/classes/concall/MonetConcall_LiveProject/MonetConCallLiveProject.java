@@ -82,8 +82,7 @@ public void operation() throws InterruptedException
  String pwin=driver.getWindowHandle();
  Set<String> chwin=driver.getWindowHandles();
  Iterator<String> s=chwin.iterator();
- int j=1;		https://dev.monetrewards.com/monet-live-newUI/#/student/login?roomid=1633326124788&room=1633326124788
-	 
+ int j=1;		
  while(s.hasNext())
  {
  String win=s.next();

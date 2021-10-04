@@ -28,7 +28,6 @@ public class UploadFakevideo
 	 Map<String, Object> prefs = new HashMap<String, Object>();
 	 options.addArguments("--headless");
 	 options.addArguments("--use-fake-ui-for-media-stream");
-	 System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 	 options.addArguments("--use-fake-device-for-media-stream=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
 	 options.addArguments("--use-file-for-fake-video-capture=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
 	 prefs.put("profile.default_content_setting_values.media_stream_mic", 1);
@@ -36,8 +35,8 @@ public class UploadFakevideo
 	 prefs.put("profile.default_content_setting_values.geolocation", 1);
 	 prefs.put("profile.default_content_setting_values.notifications", 1);
 	 options.setExperimentalOption("prefs", prefs);
-	
-	 //  /usr/bin/chromedriver
+	 System.setProperty("webdriver.chrome.driver","C:\\Users\\ASTR-34\\Desktop\\files\\chromedriver\\chromedriver_win32\\chromedriver.exe");
+     //  /usr/bin/chromedriver
      ChromeDriver driver=new ChromeDriver(options);
 	 driver.get("https://dev.monetrewards.com/monet-live-newUI/#/teacher/dashboard?name=MonetDummy");
 	 driver.manage().window().maximize();
@@ -54,8 +53,7 @@ public class UploadFakevideo
 	 Thread.sleep(2000);
 	 driver.findElement(By.xpath("//input[@formcontrolname='summary' or @data-grloadid='grloadid-9010']")).sendKeys("Maths");
      driver.findElement(By.xpath("//input[@placeholder='Type Email' or @data-grloadid='grloadid-7254']")).sendKeys("raju.kumar@ashmar.in");
-
-	 driver.findElement(By.xpath("//input[@formcontrolname='description' or @data-grloadid='grloadid-3495']")).sendKeys("Description");
+     driver.findElement(By.xpath("//input[@formcontrolname='description' or @data-grloadid='grloadid-3495']")).sendKeys("Description");
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("//span[contains(text(),'Create')]")).click();
 	 Thread.sleep(8000);
@@ -102,6 +100,9 @@ public class UploadFakevideo
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-student[1]/app-student-login[1]/div[1]/form[1]/div[2]/button[1]/span[1]")).click();
 	 Thread.sleep(10000);
-    }}
+    }}    
+	 String url=driver.getCurrentUrl();
+	 System.out.println(url);
+	 
 	}
 	}
