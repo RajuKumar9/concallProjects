@@ -28,6 +28,7 @@ public class UploadFakevideo
 	 Map<String, Object> prefs = new HashMap<String, Object>();
 	 options.addArguments("--headless");
 	 options.addArguments("--use-fake-ui-for-media-stream");
+	 System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 	 options.addArguments("--use-fake-device-for-media-stream=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
 	 options.addArguments("--use-file-for-fake-video-capture=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
 	 prefs.put("profile.default_content_setting_values.media_stream_mic", 1);
@@ -35,7 +36,7 @@ public class UploadFakevideo
 	 prefs.put("profile.default_content_setting_values.geolocation", 1);
 	 prefs.put("profile.default_content_setting_values.notifications", 1);
 	 options.setExperimentalOption("prefs", prefs);
-	 System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+	
 	 //  /usr/bin/chromedriver
      ChromeDriver driver=new ChromeDriver(options);
 	 driver.get("https://dev.monetrewards.com/monet-live-newUI/#/teacher/dashboard?name=MonetDummy");
