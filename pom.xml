@@ -53,7 +53,7 @@
 				<directory>src\main\java</directory>
 			</resource>
 			<resource>
-				<directory>src\main\java\concall\MonetConcall_LiveProject</directory>
+				<directory>src/main/java\concall/MonetConcall-LiveProject</directory>
 				 <targetPath>www</targetPath>
 			</resource>
 		</resources>
