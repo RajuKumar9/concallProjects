@@ -26,7 +26,8 @@ public class UploadFakevideo
 	{	
 	 ChromeOptions options = new ChromeOptions();
 	 Map<String, Object> prefs = new HashMap<String, Object>();
-	 options.addArguments("--headless");
+	 
+	 // options.addArguments("--headless");
 	 options.addArguments("--use-fake-ui-for-media-stream");
 	 options.addArguments("--use-fake-device-for-media-stream=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
 	 options.addArguments("--use-file-for-fake-video-capture=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
@@ -35,21 +36,29 @@ public class UploadFakevideo
 	 prefs.put("profile.default_content_setting_values.geolocation", 1);
 	 prefs.put("profile.default_content_setting_values.notifications", 1);
 	 options.setExperimentalOption("prefs", prefs);
-	 System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
-     //  /usr/bin/chromedriver
+	 System.setProperty("webdriver.chrome.driver","C:\\Users\\ASTR-34\\Desktop\\files\\geckodriver\\chromedriver_win32\\chromedriver.exe");
+     // /usr/bin/chromedriver
      ChromeDriver driver=new ChromeDriver(options);
-	 driver.get("https://dev.monetrewards.com/monet-live-newUI/#/teacher/dashboard?name=MonetDummy");
+	 driver.get("https://dev.monetrewards.com/monet-live-newUI/#/auth/authentication");
 	 driver.manage().window().maximize();
 	 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+	 driver.findElement(By.xpath("//input[@type='email' or @formcontrolname='email']")).sendKeys("raju.kumar@ashmar.in");
+	 driver.findElement(By.xpath("//input[@type='password' or @formcontrolname='password']")).sendKeys("Monet@615");
+	 Thread.sleep(1000);
+	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-auth[1]/app-authentication[1]/div[1]/div[1]/app-login[1]/div[1]/form[1]/mat-form-field[3]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]")).click();
+	 Thread.sleep(1000);
+	 driver.findElement(By.xpath("//span[contains(text(),'Moderator')]")).click();
+	 Thread.sleep(1000);
+	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-auth[1]/app-authentication[1]/div[1]/div[1]/app-login[1]/div[1]/form[1]/div[2]/button[1]/span[1]")).click();
 	 rb = new Robot();
+	 Thread.sleep(2000);
+	 driver.findElement(By.xpath("//span[contains(text(),'Start Class')]")).click();
 	 Thread.sleep(5000);
 	 rb.keyPress(KeyEvent.VK_CONTROL);
 	 rb.keyPress(KeyEvent.VK_W);
 	 Thread.sleep(1000);
 	 rb.keyRelease(KeyEvent.VK_CONTROL);
 	 rb.keyRelease(KeyEvent.VK_W);
-	 Thread.sleep(2000);
-	 driver.findElement(By.xpath("//span[contains(text(),'Start Class')]")).click();
 	 Thread.sleep(2000);
 	 driver.findElement(By.xpath("//input[@formcontrolname='summary' or @data-grloadid='grloadid-9010']")).sendKeys("Maths");
      driver.findElement(By.xpath("//input[@placeholder='Type Email' or @data-grloadid='grloadid-7254']")).sendKeys("raju.kumar@ashmar.in");
@@ -100,9 +109,8 @@ public class UploadFakevideo
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-student[1]/app-student-login[1]/div[1]/form[1]/div[2]/button[1]/span[1]")).click();
 	 Thread.sleep(10000);
-    }}    
+     }}    
 	 String url=driver.getCurrentUrl();
 	 System.out.println(url);
-	 
-	}
+	 }
 	}

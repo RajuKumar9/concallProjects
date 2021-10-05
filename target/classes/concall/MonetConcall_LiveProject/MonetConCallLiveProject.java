@@ -37,7 +37,7 @@ public void operation() throws InterruptedException
  prefs.put("profile.default_content_setting_values.geolocation", 1);
  prefs.put("profile.default_content_setting_values.notifications", 1);
  options.setExperimentalOption("prefs", prefs);
- System.setProperty("webdriver.chrome.driver","C:\\Users\\ASTR-34\\Desktop\\files\\chromedriver\\chromedriver_win32\\chromedriver.exe");
+ System.setProperty("webdriver.chrome.driver","C:\\Users\\ASTR-34\\Desktop\\files\\geckodriver\\chromedriver_win32\\chromedriver.exe");
  ChromeDriver driver=new ChromeDriver(options);
  driver.get("https://dev.monetrewards.com/monet-live-newUI/#/teacher/dashboard?name=MonetDummy");
  //https://dev.monetrewards.com/monet-live-newUI/#/teacher/call?name=nbcu@monet.com&room=1632394511731&roomid=1632394511731&id=852910
