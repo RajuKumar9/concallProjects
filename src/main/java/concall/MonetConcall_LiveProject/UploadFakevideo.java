@@ -24,7 +24,9 @@ public class UploadFakevideo
 	@Test
 	public void operation() throws InterruptedException, AWTException
 	{	
+		
 	 ChromeOptions options = new ChromeOptions();
+	 
 	 Map<String, Object> prefs = new HashMap<String, Object>();
 	 
 	 // options.addArguments("--headless");
@@ -42,16 +44,17 @@ public class UploadFakevideo
 	 driver.get("https://dev.monetrewards.com/monet-live-newUI/#/auth/authentication");
 	 driver.manage().window().maximize();
 	 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-	 driver.findElement(By.xpath("//input[@type='email' or @formcontrolname='email']")).sendKeys("raju.kumar@ashmar.in");
+	 driver.findElement(By.xpath("//input[@type='email' or @formcontrolname='email']")).sendKeys("raj@mailinator.com");
 	 driver.findElement(By.xpath("//input[@type='password' or @formcontrolname='password']")).sendKeys("Monet@615");
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-auth[1]/app-authentication[1]/div[1]/div[1]/app-login[1]/div[1]/form[1]/mat-form-field[3]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]")).click();
 	 Thread.sleep(1000);
+	 
 	 driver.findElement(By.xpath("//span[contains(text(),'Moderator')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-auth[1]/app-authentication[1]/div[1]/div[1]/app-login[1]/div[1]/form[1]/div[2]/button[1]/span[1]")).click();
 	 rb = new Robot();
-	 Thread.sleep(2000);
+     Thread.sleep(2000);
 	 driver.findElement(By.xpath("//span[contains(text(),'Start Class')]")).click();
 	 Thread.sleep(5000);
 	 rb.keyPress(KeyEvent.VK_CONTROL);
@@ -112,5 +115,6 @@ public class UploadFakevideo
      }}    
 	 String url=driver.getCurrentUrl();
 	 System.out.println(url);
+	 
 	 }
 	}
