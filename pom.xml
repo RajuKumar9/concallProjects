@@ -86,7 +86,7 @@
                             </transformers>
                            </configuration>
                     </execution>
-                </executions>
+                </executions>  
             </plugin>
       
          

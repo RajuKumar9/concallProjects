@@ -24,12 +24,10 @@ public class UploadFakevideo
 	@Test
 	public void operation() throws InterruptedException, AWTException
 	{	
-		
-	 ChromeOptions options = new ChromeOptions();
+     ChromeOptions options = new ChromeOptions();
 	 
 	 Map<String, Object> prefs = new HashMap<String, Object>();
-	 
-	 // options.addArguments("--headless");
+	 //options.addArguments("--headless");
 	 options.addArguments("--use-fake-ui-for-media-stream");
 	 options.addArguments("--use-fake-device-for-media-stream=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
 	 options.addArguments("--use-file-for-fake-video-capture=C:\\Users\\ASTR-34\\selenium\\MonetConcall-LiveProject\\video\\akiyo_cif.y4m");
@@ -41,7 +39,7 @@ public class UploadFakevideo
 	 System.setProperty("webdriver.chrome.driver","C:\\Users\\ASTR-34\\Desktop\\files\\geckodriver\\chromedriver_win32\\chromedriver.exe");
      // /usr/bin/chromedriver
      ChromeDriver driver=new ChromeDriver(options);
-	 driver.get("https://dev.monetrewards.com/monet-live-newUI/#/auth/authentication");
+	 driver.get("https://dev.monetrewards.com/devcall");
 	 driver.manage().window().maximize();
 	 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	 driver.findElement(By.xpath("//input[@type='email' or @formcontrolname='email']")).sendKeys("raj@mailinator.com");
@@ -49,14 +47,13 @@ public class UploadFakevideo
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-auth[1]/app-authentication[1]/div[1]/div[1]/app-login[1]/div[1]/form[1]/mat-form-field[3]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]")).click();
 	 Thread.sleep(1000);
-	 
 	 driver.findElement(By.xpath("//span[contains(text(),'Moderator')]")).click();
 	 Thread.sleep(1000);
 	 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-auth[1]/app-authentication[1]/div[1]/div[1]/app-login[1]/div[1]/form[1]/div[2]/button[1]/span[1]")).click();
 	 rb = new Robot();
      Thread.sleep(2000);
 	 driver.findElement(By.xpath("//span[contains(text(),'Start Class')]")).click();
-	 Thread.sleep(5000);
+	 Thread.sleep(6000);
 	 rb.keyPress(KeyEvent.VK_CONTROL);
 	 rb.keyPress(KeyEvent.VK_W);
 	 Thread.sleep(1000);
@@ -78,7 +75,7 @@ public class UploadFakevideo
 	 driver.findElement(By.xpath("//body/app-root[1]/app-teacher[1]/app-call[1]/div[1]/div[4]/button[4]/span[1]/mat-icon[1]")).click();
 	 Thread.sleep(4000);
 	 /*-------------------------------------- Open New Tab-------------------------------------------------  */
-	 for(int i=1; i<=10; i++)
+	 for(int i=1; i<=5; i++)
 	 {
 	 ((JavascriptExecutor)driver).executeScript("window.open()");
 	 }
@@ -115,6 +112,11 @@ public class UploadFakevideo
      }}    
 	 String url=driver.getCurrentUrl();
 	 System.out.println(url);
-	 
 	 }
+	@AfterTest
+	public void closeapp()
+	{
+	driver.close();	
+	}
+	
 	}
