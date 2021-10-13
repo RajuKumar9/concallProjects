@@ -111,7 +111,7 @@ public class UploadFakevideo
 	 Thread.sleep(10000);
      }}    
 	 String url=driver.getCurrentUrl();
-	 //System.out.println(url);
+	 System.out.println(url);
 	 }
 	@AfterTest
 	public void closeapp()
